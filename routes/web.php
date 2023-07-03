@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -103,9 +104,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/historyBill','history')->name('admin.historyBill');
         Route::get('/changebill/{id}/{status}','change')->name('admin.changeBill');
     });
-
+    Route::controller(BlogController::class)->group(function () {
+        Route::get('/danhsach-blog',  'list')->name('admin.listBlog');
+        Route::get('/editblog/{id}', 'edit')->name('admin.editBlog');
+        Route::PUT('/updateblog/{id}', 'update')->name('admin.updateBlog');
+        Route::get('/addblog', 'add')->name('admin.addBlog');
+        Route::POST('/postaddblog', 'create')->name('admin.postaddBlog');
+        Route::DELETE('/deleteblog/{id}', 'delete')->name('admin.deleteBlog');
+    });
 });
-
 Auth::routes();
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
@@ -135,6 +142,8 @@ Route::post('/search', 'search')->name('search');
 Route::get('/kiemtradonhang', 'mycart')->name('home.mycart');
 Route::get('/contact', 'contact')->name('home.contact');
 Route::get('/blog', 'blog')->name('home.blog');
+Route::get('/blog/{idBlog}','blog1')->name('home.bg');
 Route::get('/useredit/{id}', 'edituser')->name('home.useredit');
 Route::put('/userupdate/{id}', 'update')->name('users.update');
+Route::get('/listhome-blog',  'listhome')->name('users.listhome');
 });

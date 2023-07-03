@@ -193,7 +193,9 @@
           
                 <div class="product__item">
                     <div class="product__item__pic set-bg" >
+                    <a href="{{ route('home.product', $item->id) }}">
                     <img href="{{ route('home.product', $item->id) }}" src="{{$item ->image}}" alt="Girl in a jacket">
+                    </a>
 
                        
                         <ul class="product__hover">
@@ -224,7 +226,9 @@
           
           <div class="product__item">
               <div class="product__item__pic set-bg" >
-              <img href="{{ route('home.product', $item->id) }}" src="{{$item ->image}}" alt="Girl in a jacket">
+              <a href="{{ route('home.product', $item->id) }}">
+                    <img href="{{ route('home.product', $item->id) }}" src="{{$item ->image}}" alt="Girl in a jacket">
+                    </a>
 
                  
                   <ul class="product__hover">

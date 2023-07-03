@@ -11,9 +11,8 @@
                     <ul>
                         <li ><a href="{{route('home')}}">Trang Chủ</a></li>
                         <li><a href="{{route('shop')}}">Danh Mục</a></li>
-                        <!-- <li><a href="{{route('home.blog')}}">Tin Tức</a></li> -->
+                        <li><a href="{{route('home.blog')}}">Khuyến Mãi</a></li>
                         <li><a href="{{route('home.contact')}}">Giới Thiệu</a></li>
-                        <li><a href="{{route('home.contact')}}">Khuyến Mãi</a></li>
                         <li>  <form action="{{ route('search') }}" method="post" enctype="multipart/form-data  class="footer__newslatter">
                         @csrf
                         <input type="text" name="search" placeholder="Tìm Kiếm" style="border: 2px solid black;border-radius: 15px;">

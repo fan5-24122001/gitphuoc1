@@ -163,6 +163,18 @@
                                     <i class="fas fa-chart-bar"></i>QL TK khách hàng hàng</a>
 
                             <li>
+                            <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Blog</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{route('admin.listBlog')}}">Danh sách Blog</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('admin.addBlog')}}">Thêm Blog</a>
+                                </li>
+                            </ul>
+                        </li>
                             <li>
                                 <a href="{{ route('User.listNV') }}">
                                     <i class="fas fa-chart-bar"></i>QL TK nhân viên</a>
@@ -187,6 +199,18 @@
                                 <a href="{{ route('Category.list') }}">
                                     <i class="fas fa-map-marker-alt"></i>Danh Mục</a>
                             </li>
+                            <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Blog</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{route('admin.listBlog')}}">Danh sách Blog</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('admin.addBlog')}}">Thêm Blog</a>
+                                </li>
+                            </ul>
+                        </li>
                             <li class="has-sub">
                                 <a class="js-arrow" href="#">
                                     <i class="fas fa-copy"></i>Đơn hàng</a>

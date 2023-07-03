@@ -52,13 +52,16 @@
         @auth
             @foreach($data as $item)
             <div class="col-lg-3 col-md-4 col-sm-6 mix women">
-            <a href="{{ route('home.product', $item->id) }}">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" >
+                    <a href="{{ route('home.product', $item->id) }}">
                     <img href="{{ route('home.product', $item->id) }}" src="{{$item ->image}}" alt="Girl in a jacket">
                     </a>
-                    <div class="label new"> new</div>
+                      
                         <ul class="product__hover">
-
+                        
                             <li><a href="{{ route('love',['id_user'=> Auth::user()->id,'id_product'=>$item->id ]) }}"><span class="icon_heart_alt"></span></a></li>
+
                             <li><a href="{{ route('home.themcart', [Auth::user()->id,$item->id]) }}"><span class="fa fa-shopping-cart"></span></a></li>
                         </ul>
                     </div>
@@ -71,7 +74,7 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                         </div>
-                        <div class="product__price">{{ number_format($item->price,0) }} VND</div>
+                        <div class="product__price">{{ number_format($item->price, 0) }} VND</div>
                     </div>
                 </div>
             </div>

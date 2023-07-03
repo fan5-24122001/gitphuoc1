@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Models\Bill;
+use App\Models\Blog;
 use App\Models\Cart;
 use App\Models\Love;
 use App\Models\User;
@@ -63,7 +64,6 @@ class HomeController extends Controller
             return view('users.home', compact(['data', 'data1']));
         }
     }
-
 //chi tiết sp
     public function viewpro($id)
     {
@@ -383,9 +383,13 @@ class HomeController extends Controller
     public function blog()
     {
 
+        $data = Blog::orderBy('id','DESC')->search()->paginate(10);
+        return view('users.pages.blog.home', compact('data'));
 
-        return view('users.pages.blog.home');
-
+    }
+    public function blog1($idBlog){
+        $data =Blog::find($idBlog);
+        return view("users.pages.blog.detail", compact('data'));
     }
 
     public function mycart()
